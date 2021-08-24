@@ -1,0 +1,39 @@
+.nav {
+  background-color: #1d2b35;
+  margin-top: -15px;
+  color: rgb(89 205 93);
+}
+
+.nav > ul {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 30px 15px 15px 15px;
+  padding: 0;
+  padding-inline-start: 0;
+}
+
+.nav > ul > li {
+  padding: 5px 10px 6px 10px;
+  font-weight: 600;
+}
+
+.nav > ul > li:hover {
+  background: #ffffff30;
+  border-radius: 5px;
+  transition: 0.4s;
+  padding: 5px 10px 6px 10px;
+}
+
+.nav > ul > li > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.current-user {
+  float: right;
+  margin: 35px 2% 10px 2%;
+}
+
+.current-user > button {
+  margin-left: 15px;
+}

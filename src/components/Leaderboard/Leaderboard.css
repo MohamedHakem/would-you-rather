@@ -1,0 +1,10 @@
+.leader-card {
+  list-style-type: none;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 7px 2px #ddd;
+  color: #4b4b4b;
+}

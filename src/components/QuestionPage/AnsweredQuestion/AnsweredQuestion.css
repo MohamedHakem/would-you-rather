@@ -1,0 +1,27 @@
+.answered-question-card {
+  list-style-type: none;
+  border: 1px solid #ddd;
+  padding: 0px 15px 15px 15px;
+  margin: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.answer {
+  border: 2px solid green;
+  padding: 10px;
+  color: #000;
+  text-align: center;
+}
+
+.other-answer {
+  border: 2px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.percentage {
+  text-align: center;
+  margin: auto;
+  color: #000;
+}
