@@ -3,7 +3,6 @@ import LeaderCard from "./LeaderCard";
 import { connect } from "react-redux";
 
 class Leaderboard extends Component {
-  shouldComponentUpdate() {}
 
   render() {
     const tryAgain = Object.keys(this.props.users).sort(
