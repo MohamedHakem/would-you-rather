@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { setAuthedUser } from "../../actions/authedUser";
+import "./Login.css";
 
 class Login extends Component {
   constructor() {
