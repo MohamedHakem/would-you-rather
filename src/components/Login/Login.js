@@ -53,7 +53,7 @@ class Login extends Component {
       <div className="login">
         <div className="login-info">
           <p style={{ fontWeight: 600 }}>
-            Please Log In <br />
+            Please login first <br />
           </p>
           {userList.length !== 0 ? (
             <form onSubmit={this.handleLogin}>
