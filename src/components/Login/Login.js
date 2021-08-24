@@ -71,7 +71,7 @@ class Login extends Component {
                 </div>
               ))}
 
-              <div>Selected option is : {this.state.selsectedUser}</div>
+              {/* <div>Selected option is : {this.state.selsectedUser}</div> */}
               <button
                 className="btn view"
                 type="submit"
