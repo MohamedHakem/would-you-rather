@@ -30,17 +30,6 @@ or
 yarn install
 ```
 
-
-- Name
-- Description
-- Installation instructions
-- Usage instructions
-- Support instructions
-- Contributing instructions
-- Licence
-
-Feel free to remove any sections that aren't applicable to your project.
-
 ## Support
 
 Please [open an issue](https://github.com/fraction/readme-boilerplate/issues/new) for support.
