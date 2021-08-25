@@ -11,17 +11,25 @@ This app will let users answer questions, see already answered questions, create
 
 ## Installation
 
-Download to your project directory, add `README.md`, and commit:
+Download to your project directory, add run:
 
-```sh
-curl -LO http://git.io/Xy0Chg
-git add README.md
-git commit -m "Use README Boilerplate"
+```sh 
+npm install
 ```
 
 ## Usage
 
-Replace the contents of `README.md` with your project's:
+After installing all the dependencies with 'npm install' go ahead and start the application:
+
+```sh 
+npm start
+```
+or 
+
+```sh 
+yarn install
+```
+
 
 - Name
 - Description
