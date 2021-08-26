@@ -34,35 +34,20 @@ class App extends Component {
           this.props.authedUser !== null ? (
             <div className="app">
               <Switch>
+                <ProtectedRoute exact path="/" component={Home} />
                 <ProtectedRoute
                   exact
-                  path="/would-you-rather/"
-                  component={Home}
-                />
-                <ProtectedRoute
-                  exact
-                  path="/would-you-rather/questions/:id"
+                  path="questions/:id"
                   component={QuestionPage}
                 />
+                <ProtectedRoute exact path="add" component={NewQuestion} />
                 <ProtectedRoute
                   exact
-                  path="/would-you-rather/add"
-                  component={NewQuestion}
-                />
-                <ProtectedRoute
-                  exact
-                  path="/would-you-rather/leaderboard"
+                  path="leaderboard"
                   component={Leaderboard}
                 />
-                <ProtectedRoute
-                  exact
-                  path="/would-you-rather/login"
-                  component={Login}
-                />
-                <ProtectedRoute
-                  path="would-you-rather/*"
-                  component={NotFound}
-                />
+                <ProtectedRoute exact path="login" component={Login} />
+                <ProtectedRoute path="*" component={NotFound} />
               </Switch>
             </div>
           ) : null}
