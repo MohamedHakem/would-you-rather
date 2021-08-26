@@ -51,17 +51,21 @@ class Nav extends Component {
       <nav className="nav">
         <ul>
           <li>
-            <NavLink to="/" exact activeClassName="active">
+            <NavLink to="/would-you-rather/" exact activeClassName="active">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/add" exact activeClassName="active">
+            <NavLink to="/would-you-rather/add" exact activeClassName="active">
               New Question
             </NavLink>
           </li>
           <li>
-            <NavLink to="/leaderboard" exact activeClassName="active">
+            <NavLink
+              to="/would-you-rather/leaderboard"
+              exact
+              activeClassName="active"
+            >
               Leader Board
             </NavLink>
           </li>
