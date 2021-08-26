@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "../../actions/shared";
 import Nav from "../Nav";
@@ -7,21 +7,19 @@ import Login from "../Login";
 import Home from "../Home";
 import NewQuestion from "../NewQuestion";
 import Leaderboard from "../Leaderboard";
-//import Question from "../QuestionPage/Question";
 import NotFound from "../NotFound";
 import QuestionPage from "../QuestionPage";
 import LoadingBar from "react-redux-loading";
 import ProtectedRoute from "../ProtectedRoute";
+import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitialData());
+    this.props.handleInitialData();
   }
 
   render() {
-    console.log("this.props from APP: ", this.props);
-
     return (
       <Router>
         <>
@@ -30,10 +28,7 @@ class App extends Component {
           {this.props.authedUser === null || this.props.authedUser === "" ? (
             <Link to="/login" component={Login} />
           ) : null}
-          {console.log(
-            "this.props.authedUser from App Comp: ",
-            this.props.authedUser
-          )}
+
           {this.props.loading === false &&
           this.props.authedUser !== "" &&
           this.props.authedUser !== null ? (
@@ -52,7 +47,7 @@ class App extends Component {
                   component={Leaderboard}
                 />
                 <ProtectedRoute exact path="/login" component={Login} />
-                <ProtectedRoute path="*" component={() => "404 NOT FOUND"} />
+                <ProtectedRoute path="*" component={NotFound} />
               </Switch>
             </div>
           ) : null}
@@ -70,4 +65,4 @@ function mapStateToProps({ authedUser, users }) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { handleInitialData })(App);

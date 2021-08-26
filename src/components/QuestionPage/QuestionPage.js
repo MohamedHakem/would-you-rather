@@ -10,28 +10,7 @@ class QuestionPage extends Component {
     });
   }
   render() {
-    console.log("this.props from QuestionPage: ", this.props);
     const { question, authedUser, id } = this.props;
-
-    /*
-    console.log(
-      "Does tylermcginnes answered this question or not: ",
-      question.optionOne.votes.includes(authedUser) === true ||
-        question.optionTwo.votes.includes(authedUser) === true
-        ? true
-        : false
-    );
-    */
-
-    /* {this.props.questionIds.map((id) =>
-        questions[id].optionOne.votes.includes(authedUser) === true ||
-        questions[id].optionTwo.votes.includes(authedUser) === true ? (
-          <li className="answered-question-item" key={id}>
-            <HomeCard id={id} />
-          </li>
-        ) : null
-        )} 
-      */
 
     return (
       <Fragment>
@@ -41,21 +20,12 @@ class QuestionPage extends Component {
         ) : (
           <UnAnsweredQuestion id={id} />
         )}
-        {/*
-          console.log(
-          "Does tylermcginnes answered this question or not: ",
-          question.optionOne.votes.includes(authedUser) === true ||
-            question.optionTwo.votes.includes(authedUser) === true
-            ? true
-            : false
-          ) 
-        */}
       </Fragment>
     );
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }, props) {
+function mapStateToProps({ authedUser, questions }, props) {
   const { id } = props.match.params;
 
   return {

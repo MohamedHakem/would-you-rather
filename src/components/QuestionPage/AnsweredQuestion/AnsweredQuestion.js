@@ -21,20 +21,27 @@ class AnsweredQuestion extends Component {
 
   formSubmit(event) {
     event.preventDefault();
-    console.log(this.state.selectedOption);
   }
 
   render() {
     const { question } = this.props;
 
-    console.log("this.props from UnAnsweredQuestion: ", this.props);
-    console.log(
-      "this.state.selectedOption from UnAnsweredQuestion: ",
-      this.state.selectedOption
-    );
-
-    if (question === null) {
-      return <p>This question doesn't exist.</p>;
+    if (question === null || question === undefined) {
+      return (
+        <>
+          <br />
+          <br />
+          <div style={{ margin: "auto", width: 580, textAlign: "center" }}>
+            <h1> This question doesn't exist.</h1>
+            <h2>
+              Go to Home from the Navigation above to find new polls from
+              friends!
+            </h2>
+          </div>
+          <br />
+          <br />
+        </>
+      );
     }
 
     const { name, avatar, optionOne, optionTwo } = question;
@@ -42,11 +49,6 @@ class AnsweredQuestion extends Component {
     const selectedAnswer = condition ? optionOne.votes : optionTwo.votes;
     const voters = optionOne.votes.length + optionTwo.votes.length;
     const percentage_of_selectedAnswer = selectedAnswer.length / voters;
-    console.log("voters: ", voters);
-    console.log("percentage_of_selectedAnswer: ", percentage_of_selectedAnswer);
-    console.log("selectedAnswer: ", selectedAnswer);
-
-    console.log("optionOne from UnAnsweredQuestion: ", optionOne);
 
     return (
       <div className="answered-question-card">
@@ -61,21 +63,39 @@ class AnsweredQuestion extends Component {
                   Your Answer!
                 </p>
                 <div style={{ width: [percentage_of_selectedAnswer] }}>
-                  {`${percentage_of_selectedAnswer * 100} %`}
+                  {`${Math.round(percentage_of_selectedAnswer * 100)} %`}
                 </div>
                 <p className="percentage">
                   {voters * percentage_of_selectedAnswer} out of {voters} votes
                 </p>
               </div>
-              <p className="other-answer">
+              <div className="other-answer">
                 Would you rather {question.optionTwo.text}
-              </p>
+                <div style={{ width: [percentage_of_selectedAnswer] }}>
+                  {`${Math.round((1 - percentage_of_selectedAnswer) * 100)} %`}
+                </div>
+                <p className="percentage">
+                  {voters * (1 - percentage_of_selectedAnswer)} out of {voters}{" "}
+                  votes
+                </p>
+              </div>
             </div>
           ) : (
             <div>
-              <p className="other-answer">
+              <div className="other-answer">
                 Would you rather {question.optionOne.text}
-              </p>
+                <div>
+                  <div style={{ width: [percentage_of_selectedAnswer] }}>
+                    {`${Math.round(
+                      (1 - percentage_of_selectedAnswer) * 100
+                    )} %`}
+                  </div>
+                </div>
+                <p className="percentage">
+                  {voters * (1 - percentage_of_selectedAnswer)} out of {voters}{" "}
+                  votes
+                </p>
+              </div>
               <div className="answer">
                 <p>Would you rather {question.optionTwo.text}</p>
                 <p style={{ fontWeight: 600, color: "#59cd5d" }}>
@@ -83,7 +103,7 @@ class AnsweredQuestion extends Component {
                 </p>
                 <div>
                   <div style={{ width: [percentage_of_selectedAnswer] }}>
-                    {`${percentage_of_selectedAnswer * 100} %`}
+                    {`${Math.round(percentage_of_selectedAnswer * 100)} %`}
                   </div>
                 </div>
                 <p className="percentage">

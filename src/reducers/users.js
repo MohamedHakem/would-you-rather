@@ -1,7 +1,7 @@
 import {
   RECEIVE_USERS,
-  //ADD_QUESTION,
   ADD_QUESTION_ANSWER,
+  ADD_QUESTION,
 } from "../actions/users";
 
 export default function users(state = {}, action) {
@@ -11,26 +11,17 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users,
       };
-    // Next Case: reflect the questions created by each user in the store
-    /*
+
     case ADD_QUESTION:
-      const { authedUser, id, users } = action;
-
-      let questions = {};
-      if (true) {
-        questions = {
-          [authedUser]: {
-            ...state[authedUser],
-            // Next: reflect the questions created by each user in the store
-            //questions: state[authedUser].questions.concat([id]),
-          },
-        };
-      }
-
+      const { author, id } = action.question;
       return {
-        ...questions,
+        ...state,
+        [author]: {
+          ...state[author],
+          questions: state[author].questions.concat(id),
+        },
       };
-    */
+
     case ADD_QUESTION_ANSWER:
       return {
         ...state,

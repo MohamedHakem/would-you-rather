@@ -21,16 +21,6 @@ class Home extends Component {
 
   render() {
     const { authedUser, questions } = this.props;
-    const answeredQuestions_1 = this.props.questionIds.filter(
-      (qid) => questions[qid].optionOne.votes.includes(authedUser) === true
-    );
-    const answeredQuestions_2 = this.props.questionIds.filter(
-      (qid) => questions[qid].optionTwo.votes.includes(authedUser) === true
-    );
-
-    const answeredQuestions_sorted = answeredQuestions_1
-      .concat(answeredQuestions_2)
-      .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
 
     return (
       <>
@@ -56,10 +46,6 @@ class Home extends Component {
         {this.state.selectedTab === 1 && (
           <div>
             <ul className="outer-list" style={{ padding: 15 }}>
-              {console.log(
-                "Check this Final version: ",
-                answeredQuestions_sorted
-              )}
               {this.props.questionIds
                 .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
                 .map((id) =>

@@ -3,12 +3,13 @@ import LeaderCard from "./LeaderCard";
 import { connect } from "react-redux";
 
 class Leaderboard extends Component {
-
   render() {
     const tryAgain = Object.keys(this.props.users).sort(
       (a, b) =>
-        Object.keys(this.props.users[b].answers).length -
-        Object.keys(this.props.users[a].answers).length
+        Object.keys(this.props.users[b].answers).length +
+        Object.keys(this.props.users[b].questions).length -
+        (Object.keys(this.props.users[a].answers).length +
+          Object.keys(this.props.users[a].questions).length)
     );
 
     return (

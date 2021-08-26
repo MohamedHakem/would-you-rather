@@ -68,9 +68,21 @@ class Nav extends Component {
         </ul>
         {this.props.users[authedUser] ? (
           <div className="current-user">
-            Hello, {users[authedUser].name}!
+            <span>
+              Hello,{" "}
+              <span style={{ fontWeight: 600 }}>{users[authedUser].name}</span>!
+            </span>
+            <span>
+              <img
+                src={users[authedUser].avatarURL}
+                alt={users[authedUser].name}
+              />
+            </span>
+
             <Link to="/login">
-              <button onClick={this.handleLogout}> Logout</button>
+              <button className="logout-btn" onClick={this.handleLogout}>
+                Logout
+              </button>
             </Link>
           </div>
         ) : null}

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { handleAddQuestion } from "../../actions/questions";
 import { Redirect } from "react-router-dom";
 import "./NewQuestion.css";
-//import { Redirect } from "react-router-dom";
 
 class NewQuestion extends Component {
   state = {
@@ -31,15 +30,6 @@ class NewQuestion extends Component {
     let { optionOneText, optionTwoText } = this.state;
     const { dispatch } = this.props;
     dispatch(handleAddQuestion({ optionOneText, optionTwoText }));
-
-    {
-      console.log(
-        "The new question is: Would you rather ",
-        optionOneText,
-        "OR",
-        optionTwoText
-      );
-    }
 
     this.setState(() => ({
       optionOneText: "",
@@ -98,5 +88,11 @@ class NewQuestion extends Component {
     );
   }
 }
+
+//needed from the store for the handleAddQuestionToUsers
+//authedUser
+//users
+//questions
+//question.id
 
 export default connect()(NewQuestion);

@@ -31,25 +31,30 @@ class UnAnsweredQuestion extends Component {
         answer: this.state.selectedOption,
       })
     );
-
-    console.log(this.state.selectedOption);
   };
 
   render() {
     const { question } = this.props;
 
-    console.log("this.props from UnAnsweredQuestion: ", this.props);
-    console.log(
-      "this.state.selectedOption from UnAnsweredQuestion: ",
-      this.state.selectedOption
-    );
-
-    if (question === null) {
-      return <p>This question doesn't exist.</p>;
+    if (question === null || question === undefined) {
+      return (
+        <>
+          <br />
+          <br />
+          <div style={{ margin: "auto", width: 580, textAlign: "center" }}>
+            <h1> This question doesn't exist.</h1>
+            <h2>
+              Go to Home from the Navigation above to find new polls from
+              friends!
+            </h2>
+          </div>
+          <br />
+          <br />
+        </>
+      );
     }
 
-    const { name, avatar, optionOne } = question;
-    console.log("optionOne from UnAnsweredQuestion: ", optionOne);
+    const { name, avatar, optionOne, optionTwo } = question;
     return (
       <div className="question">
         <img className="avatar" src={avatar} alt={`Avatar of ${name}`} />
@@ -67,7 +72,7 @@ class UnAnsweredQuestion extends Component {
                   checked={this.state.selectedOption === "optionOne"}
                   onChange={this.onChange}
                 />
-                {question.optionOne.text}
+                {optionOne.text}
               </label>
             </div>
             <div className="radio">
@@ -78,15 +83,13 @@ class UnAnsweredQuestion extends Component {
                   checked={this.state.selectedOption === "optionTwo"}
                   onChange={this.onChange}
                 />
-                {question.optionTwo.text}
+                {optionTwo.text}
               </label>
             </div>
-            <div>Selected option is : {this.state.selectedOption}</div>
             <button
               className="btn view"
               type="submit"
               disabled={this.state.selectedOption === ""}
-              //onClick={(e) => this.toQuestion(e, question.id)}
             >
               Submit
             </button>

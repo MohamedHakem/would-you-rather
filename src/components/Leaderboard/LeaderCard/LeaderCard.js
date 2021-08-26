@@ -2,16 +2,10 @@ import React from "react";
 import "./LeaderCard.css";
 
 const LeaderCard = (props) => {
-  console.log("from inside LeaderCard: ", props);
-
   const answered_questions = Object.keys(props.user.answers).length;
-  console.log("answered_question: ", answered_questions);
-
   const created_questions = Object.keys(props.user.questions).length;
-  console.log("created_questions: ", created_questions);
 
   const score = answered_questions + created_questions;
-  console.log("score: ", score);
 
   return (
     <div className="question">

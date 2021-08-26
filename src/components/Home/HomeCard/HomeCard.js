@@ -14,8 +14,6 @@ class HomeCard extends Component {
 
     const { name, avatar, optionOne, id } = question;
 
-    //console.log("this.props from HomeCard: ", this.props);
-
     return (
       <div className="question">
         <img className="avatar" src={avatar} alt={`Avatar of ${name}`} />

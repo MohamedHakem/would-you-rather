@@ -2,13 +2,6 @@
 
 This app will let users answer questions, see already answered questions, create new questions and see the top 3 users on a ranking leaderboard.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Support](#support)
-- [Contributing](#contributing)
-
 ## Installation
 
 Download to your project directory, add run:
@@ -27,7 +20,7 @@ npm start
 or 
 
 ```sh 
-yarn install
+yarn start
 ```
 
 ## Support
