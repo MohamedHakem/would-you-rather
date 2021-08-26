@@ -51,18 +51,26 @@ class Nav extends Component {
       <nav className="nav">
         <ul>
           <li>
-            <NavLink to="/would-you-rather/" exact activeClassName="active">
+            <NavLink
+              to="https://mohamedhakem.github.io/would-you-rather/"
+              exact
+              activeClassName="active"
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/would-you-rather/add" exact activeClassName="active">
+            <NavLink
+              to="https://mohamedhakem.github.io/would-you-rather/add"
+              exact
+              activeClassName="active"
+            >
               New Question
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/would-you-rather/leaderboard"
+              to="https://mohamedhakem.github.io/would-you-rather/leaderboard"
               exact
               activeClassName="active"
             >
@@ -83,7 +91,7 @@ class Nav extends Component {
               />
             </span>
 
-            <Link to="/login">
+            <Link to="https://mohamedhakem.github.io/would-you-rather/login">
               <button className="logout-btn" onClick={this.handleLogout}>
                 Logout
               </button>
