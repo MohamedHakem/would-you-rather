@@ -36,31 +36,31 @@ class App extends Component {
               <Switch>
                 <ProtectedRoute
                   exact
-                  path="https://mohamedhakem.github.io/would-you-rather/"
+                  path="/"
                   component={Home}
                 />
                 <ProtectedRoute
                   exact
-                  path="https://mohamedhakem.github.io/would-you-rather/questions/:id"
+                  path="/questions/:id"
                   component={QuestionPage}
                 />
                 <ProtectedRoute
                   exact
-                  path="https://mohamedhakem.github.io/would-you-rather/add"
+                  path="/add"
                   component={NewQuestion}
                 />
                 <ProtectedRoute
                   exact
-                  path="https://mohamedhakem.github.io/would-you-rather/leaderboard"
+                  path="/leaderboard"
                   component={Leaderboard}
                 />
                 <ProtectedRoute
                   exact
-                  path="https://mohamedhakem.github.io/would-you-rather/login"
+                  path="/login"
                   component={Login}
                 />
                 <ProtectedRoute
-                  path="https://mohamedhakem.github.io/would-you-rather/*"
+                  path="/*"
                   component={NotFound}
                 />
               </Switch>
