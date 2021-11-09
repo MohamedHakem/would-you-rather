@@ -52,7 +52,7 @@ class Nav extends Component {
         <ul>
           <li>
             <NavLink
-              to="https://mohamedhakem.github.io/would-you-rather/"
+              to="/"
               exact
               activeClassName="active"
             >
@@ -61,7 +61,7 @@ class Nav extends Component {
           </li>
           <li>
             <NavLink
-              to="https://mohamedhakem.github.io/would-you-rather/add"
+              to="/add"
               exact
               activeClassName="active"
             >
@@ -70,7 +70,7 @@ class Nav extends Component {
           </li>
           <li>
             <NavLink
-              to="https://mohamedhakem.github.io/would-you-rather/leaderboard"
+              to="/leaderboard"
               exact
               activeClassName="active"
             >
