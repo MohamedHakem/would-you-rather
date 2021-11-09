@@ -44,7 +44,7 @@ class Nav extends Component {
     const { users, authedUser, toHome } = this.props;
 
     if (toHome === true) {
-      return <Redirect to="/" />;
+      return <Redirect to="/would-you-rather/" />;
     }
 
     return (
@@ -52,7 +52,7 @@ class Nav extends Component {
         <ul>
           <li>
             <NavLink
-              to="/"
+              to="/would-you-rather/"
               exact
               activeClassName="active"
             >
@@ -61,7 +61,7 @@ class Nav extends Component {
           </li>
           <li>
             <NavLink
-              to="/add"
+              to="/would-you-rather/add"
               exact
               activeClassName="active"
             >
@@ -70,7 +70,7 @@ class Nav extends Component {
           </li>
           <li>
             <NavLink
-              to="/leaderboard"
+              to="/would-you-rather/leaderboard"
               exact
               activeClassName="active"
             >
