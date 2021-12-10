@@ -2,6 +2,7 @@
 
 This app will let users answer questions, see already answered questions, create new questions and see the top 3 users on a ranking leaderboard.
 
+Want to take a break and play? [Start](https://MohamedHakem.github.iowould-you-rather) 
 ## Installation
 
 Download to your project directory, add run:
